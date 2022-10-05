@@ -44,7 +44,33 @@ func CalculateLove(s1, s2 string) (models.Love, error) {
 		}
 	}
 	percentage, _ := strconv.Atoi(numberString)
-	return models.Love{Percent: percentage}, nil
+	description := getDescription(percentage)
+	return models.Love{Percent: percentage, Description: description}, nil
+}
+
+func getDescription(percentage int) string {
+	switch {
+	case percentage > 95:
+		return "You are perfect couple!"
+	case percentage > 80:
+		return "You are good for each other!"
+	case percentage > 70:
+		return "Not perfect but you can make it!"
+	case percentage > 60:
+		return "There might be some problems but give it a try!"
+	case percentage > 50:
+		return "Not good, not bad..."
+	case percentage > 40:
+		return "Things are not looking good..."
+	case percentage > 30:
+		return "You both need to do some changes!"
+	case percentage > 20:
+		return "Looking really bad!"
+	case percentage > 10:
+		return "Just forget whole thing!"
+	default:
+		return "You are DOOMED!!!11"
+	}
 }
 
 // Calculates how many times letters are found in given text.
