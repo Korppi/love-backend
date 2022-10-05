@@ -113,6 +113,7 @@ func stringToSet(text string) []string {
 // Example: "abca" return "211" because letter "a" was 2 times in text, and b and c
 // only 1 time.
 func stringOccurencesToString(text string) (string, error) {
+	text = strings.ReplaceAll(text, "-", "")
 	alphabetCount, err := countCharacters(text)
 	if err != nil {
 		return "", err
