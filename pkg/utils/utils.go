@@ -2,7 +2,6 @@ package util
 
 import (
 	"errors"
-	"fmt"
 	"strconv"
 	"strings"
 
@@ -19,7 +18,6 @@ const Alphabets string = "abcdefghijklmnopqrstuvwxyzåäö"
 // The idea how to calculate score is taken from here:
 // https://www.codebrainer.com/blog/love-calculator-android
 func CalculateLove(s1, s2 string) (models.Love, error) {
-	fmt.Println("lets calculate love!")
 	if len(s1) == 0 || len(s2) == 0 {
 		return models.Love{}, errors.New("ONE OF NAMES IS EMPTY")
 	}
@@ -79,7 +77,6 @@ func getDescription(percentage int) string {
 // Example, "Aabc" returs list [2,1,1,0,0...].
 // NOTE: changes given text to lowercase, so "A" and "a" will be the same.
 func countCharacters(text string) ([]int, error) {
-	fmt.Println("lets count characters!")
 	alphabetCount := make([]int, len(Alphabets))
 	lettersAsList := strings.Split(strings.ToLower(text), "")
 	for _, s := range lettersAsList {
@@ -101,7 +98,6 @@ func countCharacters(text string) ([]int, error) {
 // Example: "ADbca" returns ["a","d","b","c"].
 // NOTE: changes given text to lowercase before doing set.
 func stringToSet(text string) []string {
-	fmt.Println("lets change string to set!")
 	list := strings.Split(strings.ToLower(text), "")
 	setOfLetters := make([]string, 0)
 	for _, s := range list {
@@ -117,7 +113,6 @@ func stringToSet(text string) []string {
 // Example: "abca" return "211" because letter "a" was 2 times in text, and b and c
 // only 1 time.
 func stringOccurencesToString(text string) (string, error) {
-	fmt.Println("lets get string occurences string!")
 	alphabetCount, err := countCharacters(text)
 	if err != nil {
 		return "", err
