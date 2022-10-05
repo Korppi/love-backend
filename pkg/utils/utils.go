@@ -48,6 +48,7 @@ func CalculateLove(s1, s2 string) (models.Love, error) {
 	return models.Love{Percent: percentage, Description: description}, nil
 }
 
+// Returns description for percentage
 func getDescription(percentage int) string {
 	switch {
 	case percentage > 95:
