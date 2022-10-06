@@ -20,7 +20,7 @@ func getLoveScore(c *gin.Context) {
 	sname, _ := c.GetQuery("sname")
 	score, err := util.CalculateLove(fname, sname)
 	if err != nil {
-		c.IndentedJSON(http.StatusBadRequest, err)
+		c.IndentedJSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 	} else {
 		c.IndentedJSON(http.StatusOK, score)
 	}
