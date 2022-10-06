@@ -26,3 +26,10 @@ func TestCalculateLoveIllegal(t *testing.T) {
 		t.Error("Illegal characters did not got error")
 	}
 }
+
+func TestGetDescription(t *testing.T) {
+	desc := getDescription(70)
+	if desc != "There might be some problems but give it a try!" {
+		t.Errorf("Got wrong description! Got \n%s\nwanted\n'There might be some problems but give it a try!'", desc)
+	}
+}
