@@ -48,6 +48,8 @@ func CalculateLove(s1, s2 string) (models.Love, error) {
 
 // Returns description for percentage
 func getDescription(percentage int) string {
+	// TODO: hard coded descriptions to somewhere else...
+	// If put somewhere else, its easier to write test and change texts later if needed
 	switch {
 	case percentage > 95:
 		return "You are perfect couple!"
