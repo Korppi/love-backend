@@ -11,7 +11,7 @@ func main() {
 	gin.SetMode(gin.ReleaseMode)
 	router := gin.Default()
 	router.GET("/lovecheck", getLoveScore)
-	router.Run("localhost:8080")
+	router.Run()
 }
 
 // Returns lovescore
