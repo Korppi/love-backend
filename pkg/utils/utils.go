@@ -87,10 +87,6 @@ func countCharacters(text string) ([]int, error) {
 			return []int{}, errors.New("ILLEGAL CHARACTER IN NAME")
 		}
 		alphabetCount[index]++
-
-		if !slices.Contains(lettersAsList, s) {
-			lettersAsList = append(lettersAsList, s)
-		}
 	}
 	return alphabetCount, nil
 }
